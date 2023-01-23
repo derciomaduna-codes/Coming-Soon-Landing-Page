@@ -7,6 +7,25 @@
     text-decoration: none;
     font-family: "Open Sans", sans-serif;
 }*/
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: rgba(94, 138, 243, 0.2);
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgba(233, 118, 103, 1);
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(54, 10, 23, 1);
+  }
 header {
     padding: 0;
     display: flex;
@@ -28,12 +47,23 @@ body {
     background-position: center;
     font-family: 'Lato', sans-serif;
     text-align: center;
-    
+    min-height: 100vh;
 }
-.background-img {
+#hero{
+    min-height:70vh;
+    padding: 0 0 40px 0;
+    /* background-color: #6c757d; */
+}
+/* .background-img {
     background-image: url(../images/milad-fakurian-iLHDO19h0ng-unsplash.jpg);
     background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
     filter: blur(1px);
+} */
+.page-wrapper{
+    background:rgba(1,1,1,0.7);
+    min-height: 100vh;
 }
 html {
     box-sizing: border-box;
@@ -52,6 +82,7 @@ img {
 a:hover {
     color: black;
     text-decoration: none;
+    cursor: pointer;
 }
 .btn {
     font-size: 1.2em;
@@ -86,7 +117,7 @@ a:hover {
 }
 
 /*HEADINGS & PARAGRAPHS STYLING*/
-h1 {
+h1 , #meet_the_devs_header {
     padding: 0;
     margin: 0;
     font-size: 72px;
@@ -100,9 +131,6 @@ h1 {
     -webkit-text-fill-color: transparent;
     -moz-background-clip: text;
     -moz-text-fill-color: transparent;
-}
-p {
-	margin: 0;
 }
 
 /*NAVIGATION BAR*/
@@ -151,6 +179,13 @@ nav ul li a:before {
 nav ul li a:hover {
   color: #A27035;
 }
+input[type="email"] , input[type="email"]:focus {
+    /* background:pink; */
+    border: none;
+    padding:12px 12px;
+    border-radius: 4px;
+    width:32%;
+}
 #notify {
     border: 0;
     border-radius: 8px;
@@ -163,7 +198,101 @@ nav ul li a:hover {
 #notify:hover {
     opacity: 3;
 }
-  
+#mobile-navbar{
+    display: none;
+}
+#mobile-navbar img{
+    width: 50px;
+    height: 50px;
+    filter: invert(1);
+    background: transparent;
+}
+.mobile-nav-links{
+    height: 250px ;
+    display: none;
+}
+/* MEET THE DEVS STYLES */
+section.meet_the_devs{
+    padding:2.5rem 5rem;
+}
+section.meet_the_devs > div{
+    display: flex;
+}
+.dev{
+    min-height:70vh;
+    flex:1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 32px 0;
+    scale:0.90;
+    transition: 800ms;
+}
+.dev:hover{
+    scale: 0.95;
+}
+.dev img{
+    width:200px;
+    height:200px;
+    border-radius: 50%;
+    border: none;
+    margin:12px 0;
+}
+.dev h3{
+    font-size: 32px;
+}
+.dev h6{
+    font-size: 21px;
+}
+.dev h5{
+    font-size: 32px;
+}
+.dev h3 , .dev h6 , .dev h5{
+    margin:12px 0;
+}
+.divider{
+    background-color: rgba(94, 138, 243, 0.2);
+    width:250px;
+    height: 4px;
+    margin:32px auto;
+}
+.dev > a{
+    color:rgba(94, 138, 243, 1);
+    font-size: 21px;
+}
+.dev > a:hover{
+    color:rgba(233, 118, 103, 0.8);
+}
+.dev p{
+    font-size:18px;
+    width:65%;
+    margin:12px 0;
+}
+.dev .icons a{
+    font-size: 16px;
+}
+section.meet_the_devs , #meet_the_devs_header{
+    font-size: 52px !important;
+    margin-bottom: 32px ;
+}
+/* section.meet_the_devs , #meet_the_devs_header{
+    font-size: 32px !important;
+} */
+h6 a {
+    color: rgba(233, 118, 103, 1) ;
+    text-decoration: none;
+}
+h6 a:hover {
+    color: rgba(94, 138, 243, 1) ;
+    text-decoration: none;
+}
+.dev a {
+    text-decoration: none;
+}
+p {
+	margin: 0;
+}
+
 /*ICONS*/
 .fa {
     color: white;
@@ -179,21 +308,27 @@ nav ul li a:hover {
 
 /*FOOTER*/
 footer {
-    margin-top: 30px;
-    padding: 20px;
+    /* background:rgba(233, 118, 103, 0.7); */
+    /* margin-top: 30px; */
+    padding: 12px 0;
 }
 footer > ul {
     display: flex;
     justify-content: center;
 }
-footer > .icons > span > a {
+footer a {
     color: #A27035;
+}
+.icons a{
+    /* background:yellow; */
+    margin: 21px 0 32px 0;
+
 }
 
 /*MEDIA QUERIES*/
 @media (max-width: 650px) {
     .logo > img{
-      margin-top: 5px;
+        margin-top: 5px;
       width: 100%;
       position: relative;
       margin: 0 auto;
@@ -211,5 +346,26 @@ footer > .icons > span > a {
     }
     nav > ul {
         flex-direction: column;
+    }
+}
+@media (max-width: 900px) {
+    p , h3 {
+        padding: 0 21px;
+    }
+    section.meet_the_devs > div{
+        flex-direction: column;
+    }
+    .dev{
+        width:100%;
+        min-height: 50vh;
+    }
+    #hero{
+        min-height:50vh;
+    }
+    #navbar{
+        display: none;
+    }
+    #mobile-navbar{
+        display: flex;
     }
 }

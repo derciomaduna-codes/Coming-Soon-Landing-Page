@@ -368,4 +368,10 @@ footer a {
     #mobile-navbar{
         display: flex;
     }
+	.dev p{
+    font-size:18px;
+    width:100%;
+    margin:12px 0;
+		padding:0 12px;
+}
 }
